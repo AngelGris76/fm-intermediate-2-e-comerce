@@ -2,7 +2,7 @@
 header.header
   nav.navbar
     button.togglemenu(type="button" aria-label="toggle menu")
-      img.togglemenu__img(src="./assets/images/icon-menu.svg" alt="")
+      img.togglemenuimg(src="./assets/images/icon-menu.svg" alt="")
     ul.mainmenu
       each item in items
         li.mainmenu__item
@@ -12,7 +12,7 @@ header.header
   ul.extramenu
     li.extramenu__item
       button.extramenu__button(type="button" aria-label="cart menu")
-        img.extramenu__img--cart(src="./assets/images/icon-cart.svg" alt="cart")
+        img.imgcart(src="./assets/images/icon-cart.svg" alt="cart")
     li.extramenu__item
       a.extramenu__link(href="#" aria-label="go to my profile page")
-        img.extramenu__img--profile(src="./assets/images/image-avatar.png" alt="avatar")
+        img.avatar(src="./assets/images/image-avatar.png" alt="avatar")

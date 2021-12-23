@@ -2,6 +2,7 @@
 
 .overlay.hidemodal
   button.button.button--close(type="button" aria-label="close model")
-    img.button__img(src="./assets/images/icon-close.svg" atl="")
+    img.button__img(src="./assets/images/icon-close.svg" alt="")
   .gallery-container 
-    include ../blocks/gallery
+    include ../mixins/gallery
+    +gallery("modal")
