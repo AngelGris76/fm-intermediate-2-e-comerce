@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Comerce product</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" type="module"> </script>
+  </head>
+  <body> 
+    <header class="header">
+      <nav class="navbar">
+        <button class="togglemenu" type="button" aria-label="toggle menu"><img class="togglemenu__img" src="./assets/images/icon-menu.svg" alt=""></button>
+        <ul class="mainmenu">
+          <li class="mainmenu__item"><a class="mainmenu__link" href="#">Collections</a></li>
+          <li class="mainmenu__item"><a class="mainmenu__link" href="#">Men</a></li>
+          <li class="mainmenu__item"><a class="mainmenu__link" href="#">Women</a></li>
+          <li class="mainmenu__item"><a class="mainmenu__link" href="#">About</a></li>
+          <li class="mainmenu__item"><a class="mainmenu__link" href="#">Contact</a></li>
+        </ul>
+      </nav><img class="logo" src="./assets/images/logo.svg" alt="Logo">
+      <ul class="extramenu">
+        <li class="extramenu__item">
+          <button class="extramenu__button" type="button" aria-label="cart menu"><img class="extramenu__img--cart" src="./assets/images/icon-cart.svg" alt="cart"></button>
+        </li>
+        <li class="extramenu__item"><a class="extramenu__link" href="#" aria-label="go to my profile page"><img class="extramenu__img--profile" src="./assets/images/image-avatar.png" alt="avatar"></a></li>
+      </ul>
+    </header>
+    <main class="main-container"> 
+      <article class="product">
+        <div class="text-container">
+          <div class="description">
+            <h2 class="title">sneaker company </h2>
+            <h3 class="subtitle">fall limited edition<br>sneakers</h3>
+            <p class="description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+          </div>
+          <p class="prices"><span class="discountprice">$125.00</span><span class="originalprice">$250.00</span></p>
+          <div class="controls"> 
+            <output class="quantity"> 
+              <button class="button button--minus" type="button" aria-label="decrease quantity to buy"><img class="button__img" src="./assets/images/icon-minus.svg" alt=""></button><span class="quantity__details">0</span>
+              <button class="button button--plus" type="button" aria-label="increase quantity to buy"><img class="button__img" src="./assets/images/icon-plus.svg" alt=""></button>
+            </output>
+            <button class="button button--add" type="button" aria-label="add item to cart"><img class="addbutton__img" src="./assets/images/icon-cart.svg" alt=""></button>
+          </div>
+        </div>
+        <div class="gallery-container"> 
+          <ul class="gallery"> 
+            <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-1.jpg" alt=""></li>
+            <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-2.jpg" alt=""></li>
+            <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-3.jpg" alt=""></li>
+            <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-4.jpg" alt=""></li>
+          </ul>
+          <button class="button button--prev" type="button" aria-label="click to see previous image"><img class="buttonnext_img" src="./assets/images/icon-previous.svg" alt=""></button>
+          <button class="button button--next" type="button" aria-label="click to see next image"><img class="buttonprev_img" src="./assets/images/icon-next.svg" alt=""></button>
+          <ul class="thumbnail-container">
+            <li class="thumbnail">
+              <button class="button button--thumb" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-1-thumbnail.jpg" alt=""></button>
+            </li>
+            <li class="thumbnail">
+              <button class="button button--thumb" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-2-thumbnail.jpg" alt=""></button>
+            </li>
+            <li class="thumbnail">
+              <button class="button button--thumb" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-3-thumbnail.jpg" alt=""></button>
+            </li>
+            <li class="thumbnail">
+              <button class="button button--thumb" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-4-thumbnail.jpg" alt=""></button>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </main>
+    <div class="overlay hidemodal">
+      <button class="button button--close" type="button" aria-label="close model"><img class="button__img" src="./assets/images/icon-close.svg" atl=""></button>
+      <div class="gallery-container"> 
+        <ul class="gallery"> 
+          <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-1.jpg" alt=""></li>
+          <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-2.jpg" alt=""></li>
+          <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-3.jpg" alt=""></li>
+          <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-4.jpg" alt=""></li>
+        </ul>
+        <button class="button button--prev" type="button" aria-label="click to see previous image"><img class="buttonnext_img" src="./assets/images/icon-previous.svg" alt=""></button>
+        <button class="button button--next" type="button" aria-label="click to see next image"><img class="buttonprev_img" src="./assets/images/icon-next.svg" alt=""></button>
+        <ul class="thumbnail-container">
+          <li class="thumbnail">
+            <button class="button button--thumb" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-1-thumbnail.jpg" alt=""></button>
+          </li>
+          <li class="thumbnail">
+            <button class="button button--thumb" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-2-thumbnail.jpg" alt=""></button>
+          </li>
+          <li class="thumbnail">
+            <button class="button button--thumb" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-3-thumbnail.jpg" alt=""></button>
+          </li>
+          <li class="thumbnail">
+            <button class="button button--thumb" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-4-thumbnail.jpg" alt=""></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

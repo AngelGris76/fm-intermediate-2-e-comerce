@@ -1,0 +1,13 @@
+ul.gallery 
+  each image in ids
+    li.gallery__item 
+      img.gallery__img(src=`./assets/images/image-product-${image}.jpg` alt="")
+button.button.button--prev(type="button" aria-label="click to see previous image")
+  img.buttonnext_img(src="./assets/images/icon-previous.svg" alt="")
+button.button.button--next(type="button" aria-label="click to see next image")
+  img.buttonprev_img(src="./assets/images/icon-next.svg" alt="")
+ul.thumbnail-container
+  each thumbn in ids
+    li.thumbnail
+      button.button.button--thumb(type="button" aria-label="select image")
+        img.thumbnail__img(src=`./assets/images/image-product-${thumbn}-thumbnail.jpg` alt="")
