@@ -16,3 +16,14 @@ html(lang="en")
     include ../layout/header.pug
     include ../layout/main.pug
     include ../layout/modal.pug
+    template#itemtemplate
+      li.item 
+        img.item__avatar(src="" alt="")
+        .item__text 
+          p.item__description 
+          p.item__cost 
+            span.item__unitprice 
+            span.item__quantity 
+            span.item__totalprice 
+        button.button.item__delete(type="button" aria-label="Delete this item")
+          img.buttonicon(src="./assets/images/icon-delete.svg" alt="")

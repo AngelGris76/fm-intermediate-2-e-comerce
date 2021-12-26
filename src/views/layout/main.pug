@@ -1,4 +1,4 @@
--var ids = ["1","2","3","4"]
+- var ids = ["1","2","3","4"]
 
 main.main-container 
  article.product
@@ -10,18 +10,18 @@ main.main-container
     p.prices
       span.discountprice $125.00
       span.originalprice $250.00
-    .controls 
-      
-      // output.quantity 
-      
-      button.button.button--minus#button--minus(type="button" aria-label="decrease quantity to buy")
-        img.button__img(src="./assets/images/icon-minus.svg" alt="")
-      output.quantity(for="button--minus button--plus" name="quantity") 0
-      button.button.button--plus#button--plus(type="button" aria-label="increase quantity to buy")
-        img.button__img(src="./assets/images/icon-plus.svg" alt="")
-      button.button.button--add(type="button" aria-label="add item to cart")
-        img.addbutton__img(src="./assets/images/icon-cart.svg" alt="")
+    form.productform
+      input(type="hidden", name="id" value="sneakers")
+      button.button.button--minus#button--minus(type="button" aria-label="decrease quantity to buy" aria-controls="buyquantity")
+        img.buttonicon(src="./assets/images/icon-minus.svg" alt="")
+      .input-container(id="buyquantity" role="region" aria-live="polite")  
+        input.quantity#quantity(type="number", name="quantity" value="")
+      button.button.button--plus#button--plus(type="button" aria-label="increase quantity to buy" aria-controls="buyquantity")
+        img.buttonicon(src="./assets/images/icon-plus.svg" alt="")
+      button.button.button--add(aria-label="add item to cart")
+        img.buttonicon(src="./assets/images/icon-cart.svg" alt="")
         span.addbutton__text Add to cart
+
   .gallery-container 
     include ../mixins/gallery
     +gallery
