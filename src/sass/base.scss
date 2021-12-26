@@ -1,0 +1,22 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.button {
+  display: block;
+  padding: 0;
+
+  background-color: transparent;
+  border: 2px solid transparent;
+}
+
+.buttonicon {
+  display: block;
+}
