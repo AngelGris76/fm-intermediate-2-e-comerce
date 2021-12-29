@@ -15,9 +15,9 @@ header.header
       button.button#cartbutton(type="button" aria-label="cart menu" aria-haspopup="dialog" aria-expanded="false")
         img.buttonicon(src="./assets/images/icon-cart.svg" alt="cart")
 
-      .cart(role="dialog" aria-lavelledby="cartbutton")
+      .cart.hide(role="dialog" aria-lavelledby="cartbutton")
         h2.cart__title Cart
-        p.emptydescription.hide Your cart is empty
+        p.emptydescription Your cart is empty
         form.cartform#cartform
           ul.cartproducts
             li.item 
@@ -33,7 +33,7 @@ header.header
 
           button.checkout Checkout
 
-      .cartindicator 3
+      .cartindicator.hide 3
 
     li.extramenu__item
       a.extramenu__link(href="#" aria-label="go to my profile page")

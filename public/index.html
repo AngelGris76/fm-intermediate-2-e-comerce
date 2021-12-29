@@ -29,9 +29,9 @@
       <ul class="extramenu">
         <li class="extramenu__item">
           <button class="button" id="cartbutton" type="button" aria-label="cart menu" aria-haspopup="dialog" aria-expanded="false"><img class="buttonicon" src="./assets/images/icon-cart.svg" alt="cart"></button>
-          <div class="cart" role="dialog" aria-lavelledby="cartbutton">
+          <div class="cart hide" role="dialog" aria-lavelledby="cartbutton">
             <h2 class="cart__title">Cart</h2>
-            <p class="emptydescription hide">Your cart is empty</p>
+            <p class="emptydescription">Your cart is empty</p>
             <form class="cartform" id="cartform">
               <ul class="cartproducts">
                 <li class="item"> <img class="item__avatar" src="./assets/images/image-product-1-thumbnail.jpg" alt="">
@@ -45,7 +45,7 @@
               <button class="checkout">Checkout</button>
             </form>
           </div>
-          <div class="cartindicator">3</div>
+          <div class="cartindicator hide">3</div>
         </li>
         <li class="extramenu__item"><a class="extramenu__link" href="#" aria-label="go to my profile page"><img class="avatar" src="./assets/images/image-avatar.png" alt="avatar"></a></li>
       </ul>
@@ -56,16 +56,18 @@
           <div class="description">
             <h2 class="title">sneaker company </h2>
             <h3 class="subtitle">fall limited edition<br>sneakers</h3>
-            <p class="description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+            <p class="paragraph">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
           </div>
           <p class="prices"><span class="discountprice">$125.00</span><span class="originalprice">$250.00</span></p>
           <form class="productform">
             <input type="hidden" name="id" value="sneakers">
-            <button class="button button--minus" id="button--minus" type="button" aria-label="decrease quantity to buy" aria-controls="buyquantity"><img class="buttonicon" src="./assets/images/icon-minus.svg" alt=""></button>
-            <div class="input-container" id="buyquantity" role="region" aria-live="polite"> 
-              <input class="quantity" id="quantity" type="number" name="quantity" value="">
+            <div class="quantity-controls">
+              <button class="button button--minus" id="button--minus" type="button" aria-label="decrease quantity to buy" aria-controls="buyquantity"><img class="buttonicon" src="./assets/images/icon-minus.svg" alt=""></button>
+              <div class="input-container" id="buyquantity" role="region" aria-live="polite"> 
+                <input class="quantity" id="quantity" type="number" name="quantity" value="0">
+              </div>
+              <button class="button button--plus" id="button--plus" type="button" aria-label="increase quantity to buy" aria-controls="buyquantity"><img class="buttonicon" src="./assets/images/icon-plus.svg" alt=""></button>
             </div>
-            <button class="button button--plus" id="button--plus" type="button" aria-label="increase quantity to buy" aria-controls="buyquantity"><img class="buttonicon" src="./assets/images/icon-plus.svg" alt=""></button>
             <button class="button button--add" aria-label="add item to cart"><img class="buttonicon" src="./assets/images/icon-cart.svg" alt=""><span class="addbutton__text">Add to cart</span></button>
           </form>
         </div>
@@ -78,8 +80,8 @@
                     </ul>
                     <button class="buttonproduct" type="button" aria-label="press to zoom the images"></button>
                     <div class="slide-controls">
-                      <button class="button button--slide" type="button" aria-label="click to see previous image"><img class="buttonicon" src="./assets/images/icon-previous.svg" alt=""></button>
-                      <button class="button button--slide" type="button" aria-label="click to see next image"><img class="buttonicon" src="./assets/images/icon-next.svg" alt=""></button>
+                      <button class="button button--slide" type="button" aria-label="click to see previous image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-previous.svg" alt=""></button>
+                      <button class="button button--slide" type="button" aria-label="click to see next image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-next.svg" alt=""></button>
                     </div>
                     <ul class="thumbnail-container">
                       <li class="thumbnail__item">
@@ -108,8 +110,8 @@
                   <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-4.jpg" alt=""></li>
                 </ul>
                 <div class="slide-controls--modal">
-                  <button class="button button--slide" type="button" aria-label="click to see previous image"><img class="buttonicon" src="./assets/images/icon-previous.svg" alt=""></button>
-                  <button class="button button--slide" type="button" aria-label="click to see next image"><img class="buttonicon" src="./assets/images/icon-next.svg" alt=""></button>
+                  <button class="button button--slide" type="button" aria-label="click to see previous image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-previous.svg" alt=""></button>
+                  <button class="button button--slide" type="button" aria-label="click to see next image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-next.svg" alt=""></button>
                 </div>
                 <ul class="thumbnail-container">
                   <li class="thumbnail__item">

@@ -10,9 +10,9 @@ mixin gallery(type)
     button.buttonproduct(type="button" aria-label="press to zoom the images")
   div(class= ClassName)
     button.button.button--slide(type="button" aria-label="click to see previous image")
-      img.buttonicon(src="./assets/images/icon-previous.svg" alt="")
+      img.buttonicon.buttonicon--slide(src="./assets/images/icon-previous.svg" alt="")
     button.button.button--slide(type="button" aria-label="click to see next image")
-      img.buttonicon(src="./assets/images/icon-next.svg" alt="")
+      img.buttonicon.buttonicon--slide(src="./assets/images/icon-next.svg" alt="")
   
   ul.thumbnail-container
     each thumbn in ids
