@@ -13,10 +13,18 @@ body {
   display: block;
   padding: 0;
 
+  cursor: pointer;
   background-color: transparent;
   border: 2px solid transparent;
 }
 
 .buttonicon {
   display: block;
+}
+
+.gallery,
+.thumbnail-container {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
 }

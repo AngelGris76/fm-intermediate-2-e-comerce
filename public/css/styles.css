@@ -25,12 +25,20 @@ body {
 .button {
   display: block;
   padding: 0;
+  cursor: pointer;
   background-color: transparent;
   border: 2px solid transparent;
 }
 
 .buttonicon {
   display: block;
+}
+
+.gallery,
+.thumbnail-container {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
 }
 
 header {
@@ -222,8 +230,188 @@ header {
   display: none;
 }
 
-.main-container {
-  display: none;
+.product {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.text-container {
+  padding-inline: 1rem;
+}
+
+.title {
+  margin-block-start: 1.5rem;
+  margin-block-end: 1rem;
+  text-transform: uppercase;
+  font-size: clamp(0.8rem, 3.4vw, 0.9rem);
+  color: var(--Orange);
+}
+
+.subtitle {
+  margin-block-start: 0;
+  margin-block-end: 1.3rem;
+  text-transform: capitalize;
+  font-size: clamp(1.61rem, 6.87vw, 2.7rem);
+}
+
+.paragraph {
+  margin-block-end: 1.6rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--Dark-grayish-blue);
+}
+
+.prices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 1.7rem;
+  font-weight: 700;
+}
+
+.discountprice {
+  position: relative;
+  font-size: 1.8rem;
+  color: var(--Black);
+}
+.discountprice::after {
+  position: absolute;
+  padding: 0.2em 0.5em;
+  left: 7.3rem;
+  bottom: 4px;
+  content: "50%";
+  font-size: 1rem;
+  color: var(--Orange);
+  background-color: var(--Pale-orange);
+  border-radius: 6px;
+}
+
+.originalprice {
+  text-decoration: line-through;
+  color: var(--Grayish-blue);
+}
+
+.productform {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--Light-grayish-blue);
+  border-radius: 8px;
+}
+
+.button--minus,
+.button--plus {
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-block: 0.98rem;
+  padding-inline: 1rem;
+}
+
+.input-container {
+  padding-block: 0.98rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.quantity {
+  font-weight: 700;
+  background-color: transparent;
+}
+
+.button--add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding-block: 0.98rem;
+  margin-bottom: 5rem;
+  font-weight: 700;
+  color: var(--White);
+  background-color: var(--Orange);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px var(--Orange);
+}
+
+.input-container {
+  width: 100px;
+}
+
+.quantity {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  border: none;
+}
+
+.gallery-container {
+  position: relative;
+}
+
+.gallery {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+.gallery__item {
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 100%;
+  height: 80vw;
+}
+.gallery__img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0 -36px;
+}
+
+.buttonproduct {
+  cursor: default;
+}
+@media screen and (max-width: 767px) {
+  .buttonproduct {
+    display: none;
+  }
+}
+
+.slide-controls {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.button--slide {
+  padding: 0.7rem 0.8rem;
+  margin-inline: 1rem;
+  background-color: var(--White);
+  border-radius: 1.3rem;
+}
+
+.buttonicon--slide {
+  height: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .thumbnail-container {
+    display: none;
+  }
 }
 
 .controls {
