@@ -65,6 +65,8 @@ header {
     width: auto;
     padding: 0;
     min-height: 0;
+
+    background-color: transparent;
   }
 
   &__link {
@@ -121,6 +123,14 @@ header {
   &__link {
     display: block;
     width: clamp(1.5rem, 6.4vw, 3rem);
+  }
+}
+
+.cartbutton {
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      filter: brightness(0.2);
+    }
   }
 }
 

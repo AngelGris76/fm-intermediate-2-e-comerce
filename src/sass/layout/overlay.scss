@@ -1,3 +1,50 @@
 .overlay {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 1;
+
+  background-color: var(--Black-overlay);
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.modal-dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.button--close {
+  margin-inline-start: calc(48% - 6rem);
+  margin-block-end: 1rem;
+}
+
+.thumbnail-container--modal {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.slide-controls--modal {
+  top: 40%;
+  left: 1.5rem;
+  width: calc(100% - 3rem);
+}
+
+.button--slidemodal {
+  margin-inline: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 1.5rem;
+}
+
+.hidemodal {
   display: none;
 }

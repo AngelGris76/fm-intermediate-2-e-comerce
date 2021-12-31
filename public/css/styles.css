@@ -20,6 +20,7 @@
 body {
   min-height: 100vh;
   font-family: "Kumbh Sans", sans-serif;
+  background-color: var(--White);
 }
 
 .button {
@@ -32,6 +33,9 @@ body {
 
 .buttonicon {
   display: block;
+}
+.buttonicon--light {
+  filter: brightness(0) invert(1);
 }
 
 .gallery,
@@ -106,6 +110,7 @@ header {
     width: auto;
     padding: 0;
     min-height: 0;
+    background-color: transparent;
   }
 }
 .mainmenu__link {
@@ -161,6 +166,12 @@ header {
 .extramenu__link {
   display: block;
   width: clamp(1.5rem, 6.4vw, 3rem);
+}
+
+@media screen and (min-width: 1024px) {
+  .cartbutton:hover {
+    filter: brightness(0.2);
+  }
 }
 
 .cartindicator {
@@ -290,10 +301,27 @@ header {
 .product {
   display: flex;
   flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .product {
+    flex-direction: row-reverse;
+    width: 87.2%;
+    max-width: 1110px;
+    margin-inline: auto;
+    padding-block: 5rem;
+  }
 }
 
 .text-container {
   padding-inline: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .text-container {
+    width: 50%;
+    padding-inline: 3rem;
+  }
 }
 
 .title {
@@ -325,6 +353,13 @@ header {
   margin-block-end: 1.7rem;
   font-weight: 700;
 }
+@media screen and (min-width: 768px) {
+  .prices {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
 
 .discountprice {
   position: relative;
@@ -342,6 +377,11 @@ header {
   background-color: var(--Pale-orange);
   border-radius: 6px;
 }
+@media screen and (min-width: 768px) {
+  .discountprice {
+    margin-block-end: 1rem;
+  }
+}
 
 .originalprice {
   text-decoration: line-through;
@@ -357,19 +397,31 @@ header {
   max-width: 500px;
   margin-inline: auto;
 }
+@media screen and (min-width: 1024px) {
+  .productform {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
 
 .quantity-controls {
   display: flex;
   align-items: center;
   width: 100%;
+  height: 3.5rem;
   background-color: var(--Light-grayish-blue);
   border-radius: 8px;
+}
+@media screen and (min-width: 1024px) {
+  .quantity-controls {
+    width: 54%;
+  }
 }
 
 .button--minus,
 .button--plus {
-  flex-grow: 0;
-  flex-shrink: 0;
+  position: relative;
   padding-block: 0.98rem;
   padding-inline: 1rem;
 }
@@ -377,15 +429,23 @@ header {
 .input-container {
   padding-block: 0.98rem;
   flex-grow: 1;
-  flex-shrink: 1;
 }
 
 .quantity {
+  display: inline-block;
+  width: 100%;
   font-weight: 700;
+  text-align: center;
+  border: none;
   background-color: transparent;
+  appearance: textfield;
+}
+.quantity::-webkit-inner-spin-button, .quantity::-webkit-outer-spin-button {
+  appearance: none;
 }
 
 .button--add {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -399,20 +459,25 @@ header {
   border-radius: 8px;
   box-shadow: 0 3px 10px var(--Orange);
 }
-
-.input-container {
-  width: 100px;
+@media screen and (min-width: 768px) {
+  .button--add {
+    margin-bottom: 0;
+  }
 }
-
-.quantity {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  border: none;
+@media screen and (min-width: 1024px) {
+  .button--add:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
 }
 
 .gallery-container {
   position: relative;
+}
+@media screen and (min-width: 768px) {
+  .gallery-container {
+    width: 50%;
+    padding-inline: 3rem;
+  }
 }
 
 .gallery {
@@ -420,22 +485,44 @@ header {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  height: 80vw;
   overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .gallery {
+    height: auto;
+    margin-block-end: 1.8rem;
+  }
 }
 .gallery__item {
   flex-shrink: 0;
-  flex-grow: 0;
   width: 100%;
-  height: 80vw;
+}
+@media screen and (min-width: 768px) {
+  .gallery__item {
+    border-radius: 12px;
+    overflow: hidden;
+  }
 }
 .gallery__img {
+  object-fit: cover;
+}
+
+.gallery__img,
+.thumbnail__img {
   display: block;
   width: 100%;
-  object-fit: cover;
-  object-position: 0 -36px;
 }
 
 .buttonproduct {
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  width: calc(100% - 6rem);
+  aspect-ratio: 1/1;
+  padding: 0;
+  background-color: transparent;
+  border: none;
   cursor: default;
 }
 @media screen and (max-width: 767px) {
@@ -453,6 +540,11 @@ header {
   width: 100%;
   transform: translateY(-50%);
 }
+@media screen and (min-width: 768px) {
+  .slide-controls--hide {
+    display: none;
+  }
+}
 
 .button--slide {
   padding: 0.7rem 0.8rem;
@@ -465,9 +557,50 @@ header {
   height: 12px;
 }
 
+.thumbnail-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
 @media screen and (max-width: 767px) {
   .thumbnail-container {
     display: none;
+  }
+}
+
+.thumbnail__item {
+  width: 25%;
+}
+
+.thumbnail__button {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumbnail__button--active {
+  border-color: var(--Orange);
+}
+.thumbnail__button--active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (min-width: 1024px) {
+  .button--lighthover:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 }
 
@@ -476,5 +609,52 @@ header {
 }
 
 .overlay {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 1;
+  background-color: var(--Black-overlay);
+}
+@media screen and (max-width: 767px) {
+  .overlay {
+    display: none;
+  }
+}
+
+.modal-dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.button--close {
+  margin-inline-start: calc(48% - 6rem);
+  margin-block-end: 1rem;
+}
+
+.thumbnail-container--modal {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.slide-controls--modal {
+  top: 40%;
+  left: 1.5rem;
+  width: calc(100% - 3rem);
+}
+
+.button--slidemodal {
+  margin-inline: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 1.5rem;
+}
+
+.hidemodal {
   display: none;
 }
