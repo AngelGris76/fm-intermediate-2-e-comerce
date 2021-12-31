@@ -1,8 +1,9 @@
 -var ids = ["1","2","3","4"]
 
 .overlay.hidemodal
-  button.button.button--close(type="button" aria-label="close model")
-    img.buttonicon(src="./assets/images/icon-close.svg" alt="")
-  .gallery-container 
-    include ../mixins/gallery
-    +gallery("modal")
+  .modal-dialog
+    button.button.button--close(type="button" aria-label="close model")
+      img.buttonicon.buttonicon--light(src="./assets/images/icon-close.svg" alt="")
+    .gallery-container 
+      include ../mixins/gallery
+      +gallery("modal")

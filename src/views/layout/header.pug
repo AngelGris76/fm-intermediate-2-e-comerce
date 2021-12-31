@@ -12,10 +12,10 @@ header.header
   img.logo(src="./assets/images/logo.svg" alt="Logo")
   ul.extramenu
     li.extramenu__item
-      button.button#cartbutton(type="button" aria-label="cart menu" aria-haspopup="dialog" aria-expanded="false")
+      button.button.cartbutton#cartbutton(type="button" aria-label="cart menu" aria-haspopup="dialog" aria-expanded="false")
         img.buttonicon(src="./assets/images/icon-cart.svg" alt="cart")
 
-      .cart.hide(role="dialog" aria-lavelledby="cartbutton")
+      .cart.hide(role="dialog")
         h2.cart__title Cart
         p.emptydescription Your cart is empty
         form.cartform#cartform
