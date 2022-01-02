@@ -4,7 +4,7 @@ header.header#header
     button.button.togglemenubutton#togglemenubutton(type="button" aria-label="toggle menu" aria-haspopup="menu" aria-expanded="false")
       img.buttonicon.togglemenuicon#togglemenuicon(src="./assets/images/icon-menu.svg" alt="")
     .menuoverlay.menuoverlay--hide.menuoverlay--translate#menuoverlay
-      ul.mainmenu(role="menu" aria-labelledby="togglemenubutton")
+      ul.mainmenu(aria-labelledby="togglemenubutton")
         each item in items
           li.mainmenu__item
             a.mainmenu__link(href="#")= item

@@ -17,7 +17,7 @@
       <nav class="navbar">
         <button class="button togglemenubutton" id="togglemenubutton" type="button" aria-label="toggle menu" aria-haspopup="menu" aria-expanded="false"><img class="buttonicon togglemenuicon" id="togglemenuicon" src="./assets/images/icon-menu.svg" alt=""></button>
         <div class="menuoverlay menuoverlay--hide menuoverlay--translate" id="menuoverlay">
-          <ul class="mainmenu" role="menu" aria-labelledby="togglemenubutton">
+          <ul class="mainmenu" aria-labelledby="togglemenubutton">
             <li class="mainmenu__item"><a class="mainmenu__link" href="#">Collections</a></li>
             <li class="mainmenu__item"><a class="mainmenu__link" href="#">Men</a></li>
             <li class="mainmenu__item"><a class="mainmenu__link" href="#">Women</a></li>
@@ -56,7 +56,7 @@
             <div class="quantity-controls">
               <button class="button button--minus button--lighthover" id="button--minus" type="button" aria-label="decrease quantity to buy" aria-controls="buyquantity"><img class="buttonicon" src="./assets/images/icon-minus.svg" alt=""></button>
               <div class="input-container" id="buyquantity" role="region" aria-live="polite"> 
-                <input class="quantity" id="quantity" type="number" name="quantity" value="0">
+                <input class="quantity" id="quantity" type="number" name="quantity" value="0" aria-label="quantity to buy">
               </div>
               <button class="button button--plus button--lighthover" id="button--plus" type="button" aria-label="increase quantity to buy" aria-controls="buyquantity"><img class="buttonicon" src="./assets/images/icon-plus.svg" alt=""></button>
             </div>
@@ -92,7 +92,7 @@
         </div>
       </article>
     </main>
-    <div class="overlay hidemodal" role="modal">
+    <div class="overlay hidemodal" role="dialog" aria-modal="true">
       <div class="modal-dialog">
         <button class="button button--close" type="button" aria-label="close model"><img class="buttonicon buttonicon--light" src="./assets/images/icon-close.svg" alt=""></button>
         <div class="gallery-container"> 
