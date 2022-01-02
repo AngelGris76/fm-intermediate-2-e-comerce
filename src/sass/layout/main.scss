@@ -194,15 +194,22 @@
   @media screen and (min-width: 768px) {
     height: auto;
     margin-block-end: 1.8rem;
+    border-radius: 12px;
+    overflow: hidden;
   }
 
   &__item {
     flex-shrink: 0;
     width: 100%;
 
-    @media screen and (min-width: 768px) {
-      border-radius: 12px;
-      overflow: hidden;
+    transition: transform 0.5s;
+
+    &--normal {
+      transform: translateX(calc(var(--Slide-index) * -100%));
+    }
+
+    &--modal {
+      transform: translateX(calc(var(--Slide-modal-index) * -100%));
     }
   }
 

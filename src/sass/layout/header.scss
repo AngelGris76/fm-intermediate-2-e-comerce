@@ -20,7 +20,7 @@ header {
 
 .navbar {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .togglemenubutton {
@@ -44,6 +44,7 @@ header {
   z-index: -1;
 
   background-color: var(--Black-overlay);
+  transition: transform 0.5s;
 }
 
 .mainmenu {
@@ -155,10 +156,13 @@ header {
   width: 94vw;
   max-width: 364px;
   min-height: 258px;
+  z-index: 1;
 
   background-color: var(--White);
   border-radius: 8px;
   box-shadow: 0 5px 15px var(--Grayish-blue);
+  transform: scale(0);
+  transition: transform 0.5s;
 
   &__title {
     padding-left: 1.6rem;
@@ -229,6 +233,7 @@ header {
 }
 
 .checkout {
+  position: relative;
   display: block;
   margin-inline: auto;
   margin-bottom: 0.5rem;
@@ -241,6 +246,7 @@ header {
   color: var(--White);
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .avatar {
@@ -272,4 +278,12 @@ header {
 
 .hide {
   display: none;
+}
+
+.menuoverlay--translate {
+  transform: translateX(-100vw);
+}
+
+.cart--visible {
+  transform: scale(1);
 }

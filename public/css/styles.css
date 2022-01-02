@@ -8,6 +8,8 @@
   --White: hsl(0, 0%, 100%);
   --Black: hsl(0, 0%, 0%);
   --Black-overlay: hsl(0, 0%, 0%, 75%);
+  --Slide-index: 0;
+  --Slide-modal-index: 0;
   font-size: 100%;
 }
 
@@ -45,6 +47,11 @@ body {
   list-style: none;
 }
 
+.mobile-menu--expanded,
+.modal--expanded {
+  overflow-y: hidden;
+}
+
 header {
   display: flex;
   justify-content: flex-start;
@@ -67,7 +74,7 @@ header {
 
 .navbar {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 @media screen and (min-width: 768px) {
@@ -90,6 +97,7 @@ header {
   left: 0;
   z-index: -1;
   background-color: var(--Black-overlay);
+  transition: transform 0.5s;
 }
 
 .mainmenu {
@@ -193,9 +201,12 @@ header {
   width: 94vw;
   max-width: 364px;
   min-height: 258px;
+  z-index: 1;
   background-color: var(--White);
   border-radius: 8px;
   box-shadow: 0 5px 15px var(--Grayish-blue);
+  transform: scale(0);
+  transition: transform 0.5s;
 }
 .cart__title {
   padding-left: 1.6rem;
@@ -257,6 +268,7 @@ header {
 }
 
 .checkout {
+  position: relative;
   display: block;
   margin-inline: auto;
   margin-bottom: 0.5rem;
@@ -267,6 +279,7 @@ header {
   color: var(--White);
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .avatar {
@@ -296,6 +309,14 @@ header {
 
 .hide {
   display: none;
+}
+
+.menuoverlay--translate {
+  transform: translateX(-100vw);
+}
+
+.cart--visible {
+  transform: scale(1);
 }
 
 .product {
@@ -492,17 +513,20 @@ header {
   .gallery {
     height: auto;
     margin-block-end: 1.8rem;
+    border-radius: 12px;
+    overflow: hidden;
   }
 }
 .gallery__item {
   flex-shrink: 0;
   width: 100%;
+  transition: transform 0.5s;
 }
-@media screen and (min-width: 768px) {
-  .gallery__item {
-    border-radius: 12px;
-    overflow: hidden;
-  }
+.gallery__item--normal {
+  transform: translateX(calc(var(--Slide-index) * -100%));
+}
+.gallery__item--modal {
+  transform: translateX(calc(var(--Slide-modal-index) * -100%));
 }
 .gallery__img {
   object-fit: cover;
@@ -616,8 +640,10 @@ header {
   left: 0;
   width: 100vw;
   min-height: 100vh;
-  z-index: 1;
+  z-index: 2;
   background-color: var(--Black-overlay);
+  transform: scale(0);
+  transition: transform 0.5s;
 }
 @media screen and (max-width: 767px) {
   .overlay {
@@ -630,7 +656,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 80%;
+  max-width: 1362px;
 }
 
 .button--close {
@@ -657,4 +684,8 @@ header {
 
 .hidemodal {
   display: none;
+}
+
+.overlay--scale {
+  transform: scale(1);
 }
