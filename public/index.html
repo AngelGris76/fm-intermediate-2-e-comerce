@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" type="module"> </script>
   </head>
-  <body> 
-    <header class="header">
+  <body id="body">
+    <header class="header" id="header">
       <nav class="navbar">
-        <button class="button togglemenubutton" id="togglemenubutton" type="button" aria-label="toggle menu" aria-haspopup="menu" aria-expanded="false"><img class="buttonicon togglemenuicon" src="./assets/images/icon-menu.svg" alt=""></button>
-        <div class="menuoverlay menuoverlay--hide">
+        <button class="button togglemenubutton" id="togglemenubutton" type="button" aria-label="toggle menu" aria-haspopup="menu" aria-expanded="false"><img class="buttonicon togglemenuicon" id="togglemenuicon" src="./assets/images/icon-menu.svg" alt=""></button>
+        <div class="menuoverlay menuoverlay--hide menuoverlay--translate" id="menuoverlay">
           <ul class="mainmenu" role="menu" aria-labelledby="togglemenubutton">
             <li class="mainmenu__item"><a class="mainmenu__link" href="#">Collections</a></li>
             <li class="mainmenu__item"><a class="mainmenu__link" href="#">Men</a></li>
@@ -32,20 +32,12 @@
           <div class="cart hide" role="dialog">
             <h2 class="cart__title">Cart</h2>
             <p class="emptydescription">Your cart is empty</p>
-            <form class="cartform" id="cartform">
-              <ul class="cartproducts">
-                <li class="item"> <img class="item__avatar" src="./assets/images/image-product-1-thumbnail.jpg" alt="">
-                  <div class="item__text"> 
-                    <p class="item__description">Fall Limited Edition Sneakers</p>
-                    <p class="item__cost"> <span class="item__unitprice">$125.00 x </span><span class="item__quantity">3 </span><span class="item__totalprice">$375.00</span></p>
-                  </div>
-                  <button class="button item__delete" type="button" aria-label="Delete this item"><img class="buttonicon" src="./assets/images/icon-delete.svg" alt=""></button>
-                </li>
-              </ul>
-              <button class="checkout">Checkout</button>
+            <form class="cartform hide" id="cartform">
+              <ul class="cartproducts"></ul>
+              <button class="checkout button--lighthover">Checkout</button>
             </form>
           </div>
-          <div class="cartindicator hide">3</div>
+          <div class="cartindicator hide">0</div>
         </li>
         <li class="extramenu__item"><a class="extramenu__link" href="#" aria-label="go to my profile page"><img class="avatar" src="./assets/images/image-avatar.png" alt="avatar"></a></li>
       </ul>
@@ -73,59 +65,59 @@
         </div>
         <div class="gallery-container"> 
                     <ul class="gallery"> 
-                      <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-1.jpg" alt=""></li>
-                      <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-2.jpg" alt=""></li>
-                      <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-3.jpg" alt=""></li>
-                      <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-4.jpg" alt=""></li>
+                      <li class="gallery__item gallery__item--normal"><img class="gallery__img" src="./assets/images/image-product-1.jpg" alt=""></li>
+                      <li class="gallery__item gallery__item--normal"><img class="gallery__img" src="./assets/images/image-product-2.jpg" alt=""></li>
+                      <li class="gallery__item gallery__item--normal"><img class="gallery__img" src="./assets/images/image-product-3.jpg" alt=""></li>
+                      <li class="gallery__item gallery__item--normal"><img class="gallery__img" src="./assets/images/image-product-4.jpg" alt=""></li>
                     </ul>
-                    <button class="buttonproduct" type="button" aria-label="press to zoom the images"></button>
+                    <button class="button buttonproduct" type="button" aria-label="press to zoom the images"></button>
                     <div class="slide-controls slide-controls--hide">
-                      <button class="button button--slide" type="button" aria-label="click to see previous image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-previous.svg" alt=""></button>
-                      <button class="button button--slide" type="button" aria-label="click to see next image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-next.svg" alt=""></button>
+                      <button class="button button--slide button--slideprev" type="button" aria-label="click to see previous image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-previous.svg" alt=""></button>
+                      <button class="button button--slide button--slidenext" type="button" aria-label="click to see next image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-next.svg" alt=""></button>
                     </div>
                     <ul class="thumbnail-container">
                       <li class="thumbnail__item">
-                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-1-thumbnail.jpg" alt=""></button>
+                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image" data-item="1"><img class="thumbnail__img" src="./assets/images/image-product-1-thumbnail.jpg" alt=""></button>
                       </li>
                       <li class="thumbnail__item">
-                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-2-thumbnail.jpg" alt=""></button>
+                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image" data-item="2"><img class="thumbnail__img" src="./assets/images/image-product-2-thumbnail.jpg" alt=""></button>
                       </li>
                       <li class="thumbnail__item">
-                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-3-thumbnail.jpg" alt=""></button>
+                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image" data-item="3"><img class="thumbnail__img" src="./assets/images/image-product-3-thumbnail.jpg" alt=""></button>
                       </li>
                       <li class="thumbnail__item">
-                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-4-thumbnail.jpg" alt=""></button>
+                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image" data-item="4"><img class="thumbnail__img" src="./assets/images/image-product-4-thumbnail.jpg" alt=""></button>
                       </li>
                     </ul>
         </div>
       </article>
     </main>
-    <div class="overlay hidemodal">
+    <div class="overlay hidemodal" role="modal">
       <div class="modal-dialog">
         <button class="button button--close" type="button" aria-label="close model"><img class="buttonicon buttonicon--light" src="./assets/images/icon-close.svg" alt=""></button>
         <div class="gallery-container"> 
                     <ul class="gallery"> 
-                      <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-1.jpg" alt=""></li>
-                      <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-2.jpg" alt=""></li>
-                      <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-3.jpg" alt=""></li>
-                      <li class="gallery__item"> <img class="gallery__img" src="./assets/images/image-product-4.jpg" alt=""></li>
+                      <li class="gallery__item gallery__item--modal"><img class="gallery__img" src="./assets/images/image-product-1.jpg" alt=""></li>
+                      <li class="gallery__item gallery__item--modal"><img class="gallery__img" src="./assets/images/image-product-2.jpg" alt=""></li>
+                      <li class="gallery__item gallery__item--modal"><img class="gallery__img" src="./assets/images/image-product-3.jpg" alt=""></li>
+                      <li class="gallery__item gallery__item--modal"><img class="gallery__img" src="./assets/images/image-product-4.jpg" alt=""></li>
                     </ul>
                     <div class="slide-controls slide-controls--modal">
-                      <button class="button button--slide button--slidemodal" type="button" aria-label="click to see previous image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-previous.svg" alt=""></button>
-                      <button class="button button--slide button--slidemodal" type="button" aria-label="click to see next image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-next.svg" alt=""></button>
+                      <button class="button button--slide button--slidemodal button--slideprev" type="button" aria-label="click to see previous image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-previous.svg" alt=""></button>
+                      <button class="button button--slide button--slidemodal button--slidenext" type="button" aria-label="click to see next image"><img class="buttonicon buttonicon--slide" src="./assets/images/icon-next.svg" alt=""></button>
                     </div>
                     <ul class="thumbnail-container thumbnail-container--modal">
                       <li class="thumbnail__item">
-                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-1-thumbnail.jpg" alt=""></button>
+                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image" data-item="1"><img class="thumbnail__img" src="./assets/images/image-product-1-thumbnail.jpg" alt=""></button>
                       </li>
                       <li class="thumbnail__item">
-                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-2-thumbnail.jpg" alt=""></button>
+                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image" data-item="2"><img class="thumbnail__img" src="./assets/images/image-product-2-thumbnail.jpg" alt=""></button>
                       </li>
                       <li class="thumbnail__item">
-                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-3-thumbnail.jpg" alt=""></button>
+                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image" data-item="3"><img class="thumbnail__img" src="./assets/images/image-product-3-thumbnail.jpg" alt=""></button>
                       </li>
                       <li class="thumbnail__item">
-                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image"><img class="thumbnail__img" src="./assets/images/image-product-4-thumbnail.jpg" alt=""></button>
+                        <button class="button thumbnail__button button--lighthover" type="button" aria-label="select image" data-item="4"><img class="thumbnail__img" src="./assets/images/image-product-4-thumbnail.jpg" alt=""></button>
                       </li>
                     </ul>
         </div>
